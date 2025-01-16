@@ -15,7 +15,8 @@ def get_answer_from_vedis(query):
 #    """Получает ответ из Redis, если есть, иначе возвращает None."""
 #    key = query.lower()  # Преобразуем запрос к нижнему регистру для поиска
 #    answer = vedis_db[key]
-    return answer.decode("utf-8") if answer else None
+#   return answer.decode("utf-8") if answer else None
+    return answer.decode("utf-8") if answer else "Привет" None
 
 
 def get_answer_from_llm(query):
