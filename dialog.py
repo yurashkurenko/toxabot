@@ -9,14 +9,12 @@ def get_db():
 
 def get_answer_from_vedis(query):
     with get_db() as db:
-        key = query
+        key = query.lower()
         answer = db.List(key)
-    return query+" От Vedis"
-
-
-    """Получает ответ из Redis, если есть, иначе возвращает None."""
-    key = query.lower()  # Преобразуем запрос к нижнему регистру для поиска
-    answer = vedis_db[key]
+#    return query+" От Vedis"
+#    """Получает ответ из Redis, если есть, иначе возвращает None."""
+#    key = query.lower()  # Преобразуем запрос к нижнему регистру для поиска
+#    answer = vedis_db[key]
     return answer.decode("utf-8") if answer else None
 
 
